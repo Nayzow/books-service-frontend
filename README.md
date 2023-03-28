@@ -1,27 +1,61 @@
-# BooksServicesFrontend
+# books-services-frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.5.
+L'application web est réalisée avec Angular et le langage TypeScript. Elle comporte plusieurs pages affichant des livres.
 
-## Development server
+## Routes de l'application
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Les routes de l'application sont définies dans le fichier app-routing.module.ts. Les routes disponibles sont :
 
-## Code scaffolding
+```
+/books : voir toutes les livres.
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+/books/{book} : voir les détails d'un livre.
+```
 
-## Build
+## Installation classique
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Assurez-vous d'avoir Node.js et npm installés sur votre ordinateur. Vous pouvez vérifier leur installation en ouvrant une invite de commande et en tapant node -v et npm -v.
 
-## Running unit tests
+#### 1. Clonez le dépôt du projet en utilisant la commande
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+git clone https://github.com/Nayzow/endpoint-sh-frontend
+```
 
-## Running end-to-end tests
+#### 2. À la racine du projet, installez les dépendances en utilisant la commande
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+npm install
+```
 
-## Further help
+#### 3. Démarrez l'application en utilisant la commande
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+npm start
+```
+
+## Installation avec Docker
+
+Assurez-vous d'avoir Docker installé sur votre ordinateur.
+
+#### 1. Clonez le dépôt du projet en utilisant la commande
+
+```bash
+git clone https://github.com/Nayzow/endpoint-sh-frontend
+```
+
+#### 2. À la racine du projet, Construisez l'image Docker à partir du fichier Dockerfile en utilisant la commande
+
+```bash
+docker build -t endpoint-sh-frontend .
+```
+
+#### 3. Exécutez le conteneur en utilisant la commande
+
+```bash
+docker run --name endpoint-sh-frontend -p 80:80 -d endpoint-sh-frontend
+```
+
+L'application devrait maintenant être accessible à l'adresse http://localhost:80 à l'aide d'un serveur nginx.

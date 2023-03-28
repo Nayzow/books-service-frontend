@@ -1,0 +1,14 @@
+.logo {
+  width: 150px;
+  height: 150px;
+}
+
+.presentation {
+  display: flex;
+  flex-direction: row;
+  margin: 10% 30% 370px 10%;
+}
+
+.presentation > h2 {
+  font-size: 30px;
+}
