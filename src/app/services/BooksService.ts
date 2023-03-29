@@ -13,7 +13,7 @@ export class BooksService {
   }
 
   findAll(): Observable<Book[]> {
-    let url = environment.apiUrl + '/books/';
+    let url = environment.apiUrl + '/books';
     return this.http.get<Book[]>(url);
   }
 

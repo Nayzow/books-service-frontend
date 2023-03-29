@@ -14,6 +14,7 @@ import {AppRoutingModule} from "./app.routing.module";
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {SeriesComponent} from "./views/series/series.component";
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -27,14 +28,15 @@ import {SeriesComponent} from "./views/series/series.component";
     BookComponent,
     SeriesComponent,
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    RouterOutlet,
-    AppRoutingModule,
-    FormsModule,
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        RouterOutlet,
+        AppRoutingModule,
+        FormsModule,
+        NgOptimizedImage,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
