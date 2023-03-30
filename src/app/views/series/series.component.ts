@@ -3,11 +3,22 @@ import {BooksService} from "../../services/BooksService";
 import {Book} from "../../models/Book";
 import {Serie} from "../../models/Serie";
 import {SeriesService} from "../../services/SeriesService";
+import {animate, query, stagger, style, transition, trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-series',
   templateUrl: './series.component.html',
-  styleUrls: ['./series.component.css']
+  styleUrls: ['./series.component.css'],
+  animations: [
+    trigger('seriesAnimation', [
+      transition('* => *', [ // each time the binding value changes
+        query(':enter', [
+          style({opacity: 0}),
+          stagger(220, [animate('1s', style({opacity: 1}))])
+        ], {optional: true})
+      ])
+    ])
+  ]
 })
 export class SeriesComponent implements OnInit {
   @Input() series: Serie[] = [];

@@ -19,16 +19,16 @@
   background-color: #334155;
   border-radius: 15px;
   width: 300px;
-  height: 400px;
+  height: 380px;
   box-shadow: 0 0 18px 0 #000000;
-  transform: translateY(1.5em);
+  transform: translateY(1em);
   transition: transform ease-in-out 200ms;
 }
 
 :host .book:hover {
   color: #334155;
   background-color: #d3d3d3;
-  text-shadow: 3px 2px #8d8d8d;
+  text-shadow: 1px 1px #8d8d8d;
   transform: scale(1.01);
   box-shadow: 0 0 8px 0 #F2F3F4;
 }

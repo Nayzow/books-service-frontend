@@ -1,3 +1,5 @@
+import {Serie} from "./Serie";
+
 export interface Book {
   id: bigint;
   title: string;

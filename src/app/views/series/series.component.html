@@ -1,11 +1,13 @@
 <h2>Entrez le nom de la série de livre que vous recherchez ...</h2>
 <app-searchbar (submit)="submit($event)"></app-searchbar>
 
-<div [@domainsAnimation]="series.length">
-  <div class="books">
-    <a *ngFor="let serie of series" [routerLink]="['/books/' +  serie.id] " class="book">
+
+<div [@seriesAnimation]="series.length">
+  <div class="series">
+    <a *ngFor="let serie of series" [routerLink]="['/series/' +  serie.id] " class="serie">
       <h5>{{ serie.name }}</h5>
-      <h6>Tome : {{ serie.editor.name }}</h6>
+      <img src="{{serie.image}}" height="150" width="150">
+      <h6>{{ serie.editor.name }}</h6>
     </a>
   </div>
 </div>

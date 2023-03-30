@@ -1,1 +1,25 @@
-book
+<h1>{{book?.title}}</h1>
+
+<div class="data-container">
+  <div class="container">
+    <img src="{{book?.image}}" width="200" height="260">
+  </div>
+
+  <div class="container">
+    <ul>
+      <h3><img src="{{book?.serie?.image}}" height="38" width="38"/> Informations</h3>
+      <li>Éditeur : {{book?.serie?.editor?.name || 'Non disponible'}}</li>
+      <li>Série : {{book?.serie?.name || 'Non disponible'}}</li>
+      <li>Tome n°{{book?.tome|| 'Non disponible'}}</li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <ul>
+      <h3><img src="../../../assets/images/book.png" height="38" width="38"/> Disponibilité</h3>
+      <li>Éditeur : {{book?.serie?.editor?.name || 'Non disponible'}}</li>
+      <li>Série : {{book?.serie?.name || 'Non disponible'}}</li>
+      <li>Tome n°{{book?.tome|| 'Non disponible'}}</li>
+    </ul>
+  </div>
+</div>

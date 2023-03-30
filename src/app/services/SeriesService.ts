@@ -3,7 +3,6 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
 import {Serie} from "../models/Serie";
-import {Book} from "../models/Book";
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +12,7 @@ export class SeriesService {
   }
 
   findAll(): Observable<Serie[]> {
-    let url = environment.apiUrl + '/series/';
+    let url = environment.apiUrl + '/series';
     return this.http.get<Serie[]>(url);
   }
 
@@ -28,7 +27,7 @@ export class SeriesService {
   findAllBooksByIdSerie(id: string | null = null): Observable<Serie> {
     let url = environment.apiUrl + '/series/';
     if (id) {
-      url += encodeURI(id) + '/series/';
+      url += encodeURI(id) + '/books';
     }
 
     return this.http.get<Serie>(url);
