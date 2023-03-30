@@ -1,7 +1,6 @@
 <h2>Entrez le nom de la série de livre que vous recherchez ...</h2>
 <app-searchbar (submit)="submit($event)"></app-searchbar>
 
-
 <div [@seriesAnimation]="series.length">
   <div class="series">
     <a *ngFor="let serie of series" [routerLink]="['/series/' +  serie.id] " class="serie">
