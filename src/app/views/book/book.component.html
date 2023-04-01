@@ -1,26 +1,25 @@
-<h1>{{book?.title}}</h1>
-
-<div class="data-container">
-
-  <div class="container">
-    <img src="{{book?.image}}" width="200" height="260">
+<div class="book-details">
+  <div class="book-image">
+    <img src="{{book?.image}}" alt="{{book?.title}}"/>
   </div>
-
-  <div class="container">
-    <ul>
-      <h3><img src="{{book?.serie?.image}}" height="38" width="38"/> Informations</h3>
-      <li>Éditeur : {{book?.serie?.editor?.name || 'Non disponible'}}</li>
-      <li>Série : {{book?.serie?.name || 'Non disponible'}}</li>
-      <li>Tome n°{{book?.tome|| 'Non disponible'}}</li>
-    </ul>
+  <div class="book-info">
+    <h2>{{book?.title}}</h2>
+    <p class="book-author">{{book?.author}}</p>
+    <p class="book-illustrator">{{book?.illustrator}}</p>
+    <p class="book-date">{{book?.date}}</p>
+    <p class="book-description">{{book?.description}}</p>
+    <p class="book-series">{{book?.serie?.name}}</p>
+    <p class="book-editor">{{book?.serie?.editor?.name}}</p>
   </div>
+</div>
 
-  <div class="container">
-    <ul>
-      <h3><img src="../../../assets/images/book.png" height="38" width="38"/> Disponibilité</h3>
-      <li>Éditeur : {{book?.serie?.editor?.name || 'Non disponible'}}</li>
-      <li>Série : {{book?.serie?.name || 'Non disponible'}}</li>
-      <li>Tome n°{{book?.tome|| 'Non disponible'}}</li>
-    </ul>
+<h2>Autres comics de la série {{book?.serie?.name}}</h2>
+
+<div [@booksAnimation]="book?.serie?.books?.length">
+  <div class="list">
+    <a *ngFor="let book of book?.serie?.books" [routerLink]="['/books/' +  book.id]" class="list-item">
+      <h3 class="book-title">{{ book.title }}</h3>
+      <img src="{{book.image}}">
+    </a>
   </div>
 </div>

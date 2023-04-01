@@ -1,10 +1,10 @@
 # books-services-frontend
 
-L'application web est réalisée avec Angular et le langage TypeScript. Elle comporte plusieurs pages affichant des livres.
+L’application web est réalisée avec Angular et le langage TypeScript. Elle comporte plusieurs pages affichant des livres.
 
-## Routes de l'application
+## Routes de l’application
 
-Les routes de l'application sont définies dans le fichier app-routing.module.ts. Les routes disponibles sont :
+Les routes de l’application sont définies dans le fichier app-routing.module.ts. Les routes disponibles sont :
 
 ```
 /books : voir touts les comics.
@@ -32,7 +32,7 @@ Les routes de l'application sont définies dans le fichier app-routing.module.ts
 
 ## Installation classique
 
-Assurez-vous d'avoir Node.js et npm installés sur votre ordinateur. Vous pouvez vérifier leur installation en ouvrant une invite de commande et en tapant node -v et npm -v.
+Assurez-vous d’avoir Node.js et npm installés sur votre ordinateur. Vous pouvez vérifier leur installation en ouvrant une invite de commande et en tapant node -v et npm -v.
 
 #### 1. Clonez le dépôt du projet en utilisant la commande
 
@@ -46,7 +46,7 @@ git clone https://github.com/Nayzow/books-service-frontend
 npm install
 ```
 
-#### 3. Démarrez l'application en utilisant la commande
+#### 3. Lancez l’application en utilisant la commande
 
 ```bash
 npm start
@@ -56,7 +56,7 @@ L'application devrait maintenant être accessible à l'adresse http://localhost:
 
 ## Installation avec Docker
 
-Assurez-vous d'avoir Docker installé sur votre ordinateur.
+Assurez-vous d’avoir Docker installé sur votre ordinateur.
 
 #### 1. Clonez le dépôt du projet en utilisant la commande
 
@@ -64,7 +64,7 @@ Assurez-vous d'avoir Docker installé sur votre ordinateur.
 git clone https://github.com/Nayzow/books-service-frontend
 ```
 
-#### 2. À la racine du projet, Construisez l'image Docker à partir du fichier Dockerfile en utilisant la commande
+#### 2. À la racine du projet, construisez l’image Docker à partir du fichier Dockerfile en utilisant la commande
 
 ```bash
 docker build -t books-service-frontend .
@@ -76,4 +76,4 @@ docker build -t books-service-frontend .
 docker run --name books-service-frontend -p 80:80 -d books-service-frontend
 ```
 
-L'application devrait maintenant être accessible à l'adresse http://localhost:80 à l'aide d'un serveur nginx.
+L’application devrait maintenant être accessible à l’adresse http://localhost:80 à l’aide d’un serveur nginx.

@@ -2,11 +2,10 @@
 <app-searchbar (submit)="submit($event)"></app-searchbar>
 
 <div [@booksAnimation]="books.length">
-  <div class="books">
-    <a *ngFor="let book of books" [routerLink]="['/books/' +  book.id] " class="book">
-      <h5>{{ book.title }}</h5>
+  <div class="list">
+    <a *ngFor="let book of books" [routerLink]="['/books/' +  book.id]" class="list-item">
+      <h3 class="book-title">{{ book.title }}</h3>
       <img src="{{book.image}}">
-      <h6>Tome : {{ book.tome }}</h6>
     </a>
   </div>
 </div>

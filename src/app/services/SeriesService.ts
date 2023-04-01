@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
 import {Serie} from "../models/Serie";
+import {SerieDetails} from "../models/SerieDetails";
 
 @Injectable({
   providedIn: 'root',
@@ -16,12 +17,12 @@ export class SeriesService {
     return this.http.get<Serie[]>(url);
   }
 
-  findById(id: string | null = null): Observable<Serie> {
+  findById(id: string | null = null): Observable<SerieDetails> {
     let url = environment.apiUrl + '/series/';
     if (id) {
       url += encodeURI(id);
     }
-    return this.http.get<Serie>(url);
+    return this.http.get<SerieDetails>(url);
   }
 
   findAllBooksByIdSerie(id: string | null = null): Observable<Serie> {

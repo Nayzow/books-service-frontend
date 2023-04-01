@@ -1,9 +1,13 @@
-import {Serie} from "./Serie";
+import {SerieDetails} from "./SerieDetails";
 
 export interface BookDetails {
   id: bigint;
-  title: string;
   tome: number;
+  title: string;
+  author: string;
+  illustrator: string;
+  date: string;
   image: string;
-  serie: Serie;
+  description: string;
+  serie: SerieDetails;
 }

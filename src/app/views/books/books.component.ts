@@ -6,7 +6,7 @@ import {animate, query, stagger, style, transition, trigger} from "@angular/anim
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
-  styleUrls: ['./books.component.css'],
+  styleUrls: ["../../../styles.css", './books.component.css'],
   animations: [
     trigger('booksAnimation', [
       transition('* => *', [ // each time the binding value changes

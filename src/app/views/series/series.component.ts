@@ -1,6 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {BooksService} from "../../services/BooksService";
-import {Book} from "../../models/Book";
 import {Serie} from "../../models/Serie";
 import {SeriesService} from "../../services/SeriesService";
 import {animate, query, stagger, style, transition, trigger} from "@angular/animations";
@@ -8,7 +6,7 @@ import {animate, query, stagger, style, transition, trigger} from "@angular/anim
 @Component({
   selector: 'app-series',
   templateUrl: './series.component.html',
-  styleUrls: ['./series.component.css'],
+  styleUrls: ['./series.component.css', "../../../styles.css"],
   animations: [
     trigger('seriesAnimation', [
       transition('* => *', [ // each time the binding value changes

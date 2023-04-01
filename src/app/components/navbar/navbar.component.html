@@ -1,8 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar">
   <a [routerLink]="['/']"><img class="logo" src="../../../assets/images/logo.png"></a>
   <h1 [routerLink]="['/']" class="nav-title">Library.sh</h1>
-  <a [routerLink]="['/']" class="nav-object">Home</a>
-  <a [routerLink]="['/books']" class="nav-object">Comics</a>
-  <a [routerLink]="['/series']" class="nav-object">Séries</a>
-  <a [routerLink]="['/editors']" class="nav-object">Éditeur</a>
+  <div class="nav-links">
+    <a [routerLink]="['/']" class="nav-object">Home</a>
+    <a [routerLink]="['/books']" class="nav-object">Comics</a>
+    <a [routerLink]="['/series']" class="nav-object">Séries</a>
+    <a [routerLink]="['/editors']" class="nav-object">Éditeurs</a>
+  </div>
 </nav>

@@ -1,74 +1,89 @@
-h1 {
-  text-align: center;
-  font-size: 3.5rem;
-  margin-bottom: 40px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-  letter-spacing: 1px;
-  font-weight: bold;
-}
-
-h3 {
-  font-size: 1.9rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-  color: #555;
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  font-size: 1.4rem;
-  font-family: Arial, sans-serif;
-  margin-bottom: 10px;
-  color: #666;
-}
-
-.data-container {
+.book-details {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  margin: 40px;
-  padding: 30px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.container {
-  width: 330px;
-  height: 300px;
-  align-self: center;
-  margin: 20px;
+  justify-content: space-between;
   padding: 20px;
-  background-color: #fff;
-  border: 1px solid #eee;
-  border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+.book-image {
+  margin-top: 30px;
+  margin-left: 80px;
+}
 
-@media (max-width: 768px) {
-  .data-container {
-    margin: 20px;
-    padding: 20px;
-  }
+.book-image img {
+  width: 250px;
+  max-width: 100%;
+  border-radius: 5px;
+  margin-top: 40px;
+}
 
-  .container {
-    width: 100%;
-  }
+.book-info {
+  margin-top: 30px;
+  width: 65%;
+}
 
-  h1 {
-    font-size: 2rem;
-  }
+.book-info h2 {
+  font-size: 36px;
+  margin: 0;
+  margin-bottom: 10px;
+}
 
-  h3 {
-    font-size: 1.6rem;
-  }
+.book-info p {
+  font-size: 18px;
+}
 
-  li {
-    font-size: 1.2rem;
-  }
+.book-info .book-author::before {
+  content: "Author : ";
+  font-weight: bold;
+}
+
+.book-info .book-illustrator::before {
+  content: "Illustrator : ";
+  font-weight: bold;
+}
+
+.book-info .book-date::before {
+  content: "Date : ";
+  font-weight: bold;
+}
+
+.book-info .book-description::before {
+  content: "Description : ";
+  font-weight: bold;
+}
+
+.book-info .book-series::before {
+  content: "Series : ";
+  font-weight: bold;
+}
+
+.book-info .book-editor::before {
+  content: "Editor : ";
+  font-weight: bold;
+}
+
+/* Style for dark background */
+
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: #ccc;
+}
+
+h2,
+.book-series {
+  color: #ffbe0b;
+}
+
+:host .list-item {
+  border-radius: 13px;
+  width: 280px;
+  height: 360px;
+}
+
+.book-title {
+  text-align: center;
 }

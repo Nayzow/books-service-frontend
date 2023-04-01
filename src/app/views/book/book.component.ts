@@ -1,13 +1,23 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Book} from "../../models/Book";
+import {Component, OnInit} from '@angular/core';
 import {BooksService} from "../../services/BooksService";
 import * as URL from 'url';
 import {BookDetails} from "../../models/BookDetails";
+import {animate, query, stagger, style, transition, trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-book',
   templateUrl: './book.component.html',
-  styleUrls: ['./book.component.css']
+  styleUrls: ["../../../styles.css", './book.component.css'],
+  animations: [
+    trigger('booksAnimation', [
+      transition('* => *', [ // each time the binding value changes
+        query(':enter', [
+          style({opacity: 0}),
+          stagger(220, [animate('1s', style({opacity: 1}))])
+        ], {optional: true})
+      ])
+    ])
+  ]
 })
 export class BookComponent implements OnInit {
   book: BookDetails | null = null;

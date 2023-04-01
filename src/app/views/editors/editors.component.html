@@ -2,9 +2,9 @@
 <app-searchbar (submit)="submit($event)"></app-searchbar>
 
 <div [@editorsAnimation]="editors.length">
-  <div class="editors">
-    <a *ngFor="let editor of editors" [routerLink]="['/editors/' +  editor.id] " class="editor">
-      <h5>{{ editor.name }}</h5>
+  <div class="list">
+    <a *ngFor="let editor of editors" [routerLink]="['/editors/' +  editor.id] " class="list-item">
+      <h3>{{editor.name}}</h3>
       <img src="{{editor.image}}" height="150" width="150">
     </a>
   </div>

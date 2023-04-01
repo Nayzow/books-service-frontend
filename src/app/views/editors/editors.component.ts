@@ -6,7 +6,7 @@ import {EditorsService} from "../../services/EditorsService";
 @Component({
   selector: 'app-editors',
   templateUrl: './editors.component.html',
-  styleUrls: ['./editors.component.css'],
+  styleUrls: ['./editors.component.css', "../../../styles.css"],
   animations: [
     trigger('editorsAnimation', [
       transition('* => *', [ // each time the binding value changes
