@@ -15,11 +15,18 @@
 
 <h2>Autres comics de la série {{book?.serie?.name}}</h2>
 
-<div [@booksAnimation]="book?.serie?.books?.length">
-  <div class="list">
-    <a *ngFor="let book of book?.serie?.books" [routerLink]="['/books/' +  book.id]" class="list-item">
+<div class="list-container">
+  <button class="scroll-button" (click)="scrollLeft()">
+    <img src="assets/images/arrow-left.png">
+  </button>
+  <div class="list" #list>
+    <a *ngFor="let book of book?.serie?.books" [routerLink]="['/books/' + book.id]" class="list-item">
       <h3 class="book-title">{{ book.title }}</h3>
       <img src="{{book.image}}">
     </a>
   </div>
+  <button class="scroll-button" (click)="scrollRight()">
+    <i class="fas fa-chevron-right"></i>
+  </button>
 </div>
+
