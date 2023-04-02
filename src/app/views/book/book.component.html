@@ -26,7 +26,32 @@
     </a>
   </div>
   <button class="scroll-button" (click)="scrollRight()">
-    <i class="fas fa-chevron-right"></i>
+    <img src="assets/images/arrow-right.png">
   </button>
 </div>
 
+<div class="comment-section">
+  <h3 class="section-title">Commentaires</h3>
+  <div class="comments">
+    <!-- boucle sur les commentaires -->
+    <div class="comment">
+      <div class="user-avatar">
+        <img src="assets/images/batman.png">
+      </div>
+      <div class="comment-content">
+        <h4 class="comment-author">Batman</h4>
+        <p class="comment-text">Fuck Superman</p>
+        <p class="comment-date">Posté le 02 avril 2023</p>
+      </div>
+    </div>
+    <!-- fin de la boucle -->
+  </div>
+  <form class="comment-form">
+    <h3 class="form-title">Ajouter un commentaire</h3>
+    <div class="form-group">
+      <label for="comment">Commentaire</label>
+      <textarea id="comment" name="comment" required></textarea>
+    </div>
+    <button type="submit" class="btn-submit">Envoyer</button>
+  </form>
+</div>
