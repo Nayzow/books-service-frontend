@@ -26,9 +26,9 @@ export class BooksService {
   }
 
   findByName(name: string | null = null): Observable<Book[]> {
-    let url = environment.apiUrl + '/book/';
+    let url = environment.apiUrl + '/books';
     if (name) {
-      url += encodeURI(name);
+      url += `?title=${encodeURIComponent(name)}`;
     }
     return this.http.get<Book[]>(url);
   }

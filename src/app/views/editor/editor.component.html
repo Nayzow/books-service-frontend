@@ -1,14 +1,17 @@
-<h1>{{editor?.name}}</h1>
-<div class="data-container">
-
-  <div class="container">
-    <img src="{{editor?.image}}" width="280" height="280">
+<ng-container *ngIf="editor$ | async as editor; else notFound">
+  <div class="editor-details">
+    <div class="editor-image">
+      <img src="{{editor?.image}}" alt="{{editor?.name}}"/>
+    </div>
+    <div class="editor-info">
+      <h2>{{editor?.name}}</h2>
+      <p class="editor-description">{{editor?.description}}</p>
+    </div>
   </div>
 
-  <div class="container">
-    <ul>
-      <h3><img src="../../../assets/images/information.png" height="30" width="30"/> Informations</h3>
-      <li>Éditeur : {{editor?.name || 'Non disponible'}}</li>
-    </ul>
-  </div>
-</div>
+  <h2>Séries de comics de l'éditeur {{editor?.name}}</h2>
+</ng-container>
+
+<ng-template #notFound>
+  <p class="not-found-message">Editeur non trouvé :'(</p>
+</ng-template>

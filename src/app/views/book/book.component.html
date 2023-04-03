@@ -1,57 +1,25 @@
-<div class="book-details">
-  <div class="book-image">
-    <img src="{{book?.image}}" alt="{{book?.title}}"/>
-  </div>
-  <div class="book-info">
-    <h2>{{book?.title}}</h2>
-    <p class="book-author">{{book?.author}}</p>
-    <p class="book-illustrator">{{book?.illustrator}}</p>
-    <p class="book-date">{{book?.date}}</p>
-    <p class="book-description">{{book?.description}}</p>
-    <p class="book-series">{{book?.serie?.name}}</p>
-    <p class="book-editor">{{book?.serie?.editor?.name}}</p>
-  </div>
-</div>
-
-<h2>Autres comics de la série {{book?.serie?.name}}</h2>
-
-<div class="list-container">
-  <button class="scroll-button" (click)="scrollLeft()">
-    <img src="assets/images/arrow-left.png">
-  </button>
-  <div class="list" #list>
-    <a *ngFor="let book of book?.serie?.books" [routerLink]="['/books/' + book.id]" class="list-item">
-      <h3 class="book-title">{{ book.title }}</h3>
-      <img src="{{book.image}}">
-    </a>
-  </div>
-  <button class="scroll-button" (click)="scrollRight()">
-    <img src="assets/images/arrow-right.png">
-  </button>
-</div>
-
-<div class="comment-section">
-  <h3 class="section-title">Commentaires</h3>
-  <div class="comments">
-    <!-- boucle sur les commentaires -->
-    <div class="comment">
-      <div class="user-avatar">
-        <img src="assets/images/batman.png">
-      </div>
-      <div class="comment-content">
-        <h4 class="comment-author">Batman</h4>
-        <p class="comment-text">Fuck Superman</p>
-        <p class="comment-date">Posté le 02 avril 2023</p>
-      </div>
+<ng-container *ngIf="book$ | async as book; else notFound">
+  <div class="book-details">
+    <div class="book-image">
+      <img src="{{book?.image}}" alt="{{book?.title}}"/>
     </div>
-    <!-- fin de la boucle -->
-  </div>
-  <form class="comment-form">
-    <h3 class="form-title">Ajouter un commentaire</h3>
-    <div class="form-group">
-      <label for="comment">Commentaire</label>
-      <textarea id="comment" name="comment" required></textarea>
+    <div class="book-info">
+      <h2>{{book?.title}}</h2>
+      <p class="book-author">{{book?.author}}</p>
+      <p class="book-illustrator">{{book?.illustrator}}</p>
+      <p class="book-date">{{book?.date}}</p>
+      <p class="book-description">{{book?.description}}</p>
+      <p class="book-series">{{book?.serie?.name}}</p>
+      <p class="book-editor">{{book?.serie?.editor?.name}}</p>
     </div>
-    <button type="submit" class="btn-submit">Envoyer</button>
-  </form>
-</div>
+  </div>
+
+  <h2>Autres comics de la série {{book?.serie?.name}}</h2>
+
+  <app-scrollableBooksList [books]="book?.serie?.books"></app-scrollableBooksList>
+
+  <app-comments [comments]="book?.comments"></app-comments>
+</ng-container>
+<ng-template #notFound>
+  <p class="not-found-message">Comic non trouvé :'(</p>
+</ng-template>

@@ -1,19 +1,18 @@
 .navbar {
   display: flex;
+  width: 100%;
   align-items: center;
-  padding: 20px;
-  background-color: #FFF;
-  color: #000;
-
+  background-color: #444444;
+  color: #fff;
 }
 
 .navbar .logo {
-
+  margin-left: 10px;
 }
 
 .nav-title {
   margin-left: 10px;
-  font-size: 35px;
+  font-size: 30px;
 }
 
 .navbar .nav-links {
@@ -23,7 +22,7 @@
 
 .navbar .nav-links a {
   margin-left: 20px;
-  color: #000;
+  color: #fff;
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }

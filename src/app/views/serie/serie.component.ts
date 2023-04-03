@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import * as URL from 'url';
 import {SerieDetails} from "../../models/SerieDetails";
 import {SeriesService} from "../../services/SeriesService";
+import {map, Observable, switchMap} from "rxjs";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-serie',
@@ -9,15 +10,18 @@ import {SeriesService} from "../../services/SeriesService";
   styleUrls: ['./serie.component.css']
 })
 export class SerieComponent implements OnInit {
-  serie: SerieDetails | null = null;
+  serie$!: Observable<SerieDetails>;
   path: string | null = null;
   id: string | null = null;
-  constructor(private seriesService: SeriesService) {
-    this.path = URL.parse(window.location.href).pathname;
-    // @ts-ignore
-    this.id = this.path.split('/').pop();
+
+  constructor(private seriesService: SeriesService, private activatedRoute: ActivatedRoute) {
   }
+
   ngOnInit() {
-    this.seriesService.findById(this.id).subscribe(serie => this.serie = serie)
+    this.serie$ = this.activatedRoute.paramMap
+      .pipe(
+        map((params) => params.get('id')),
+        switchMap(id => this.seriesService.findById(id))
+      )
   }
 }

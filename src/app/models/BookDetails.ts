@@ -1,4 +1,5 @@
 import {SerieDetails} from "./SerieDetails";
+import {Comment} from "./Comment";
 
 export interface BookDetails {
   id: bigint;
@@ -10,4 +11,5 @@ export interface BookDetails {
   image: string;
   description: string;
   serie: SerieDetails;
+  comments: Comment[];
 }

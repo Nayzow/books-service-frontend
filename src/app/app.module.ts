@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {AppComponent} from './app.component';
 import {RouterLink, RouterOutlet} from "@angular/router";
 import {AppRoutingModule} from "./app.routing.module";
 import {FormsModule} from "@angular/forms";
@@ -18,6 +18,8 @@ import {SeriesComponent} from "./views/series/series.component";
 import {SerieComponent} from "./views/serie/serie.component";
 import {EditorsComponent} from "./views/editors/editors.component";
 import {EditorComponent} from "./views/editor/editor.component";
+import {ScrollableBooksListComponent} from "./components/scrollableBooksList/scrollableBooksList.component";
+import {CommentsComponent} from "./components/comments/comments.component";
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import {EditorComponent} from "./views/editor/editor.component";
     NavbarComponent,
     SearchbarComponent,
     FooterComponent,
+    ScrollableBooksListComponent,
+    CommentsComponent,
     HomeComponent,
     UserComponent,
     BooksComponent,
@@ -34,16 +38,17 @@ import {EditorComponent} from "./views/editor/editor.component";
     EditorsComponent,
     EditorComponent,
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        HttpClientModule,
-        RouterOutlet,
-        AppRoutingModule,
-        FormsModule,
-        NgOptimizedImage,
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    RouterOutlet,
+    AppRoutingModule,
+    FormsModule,
+    NgOptimizedImage,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -35,9 +35,9 @@ export class SeriesService {
   }
 
   findByName(name: string | null = null): Observable<Serie[]> {
-    let url = environment.apiUrl + '/series/';
+    let url = environment.apiUrl + '/series';
     if (name) {
-      url += encodeURI(name);
+      url += `?name=${encodeURIComponent(name)}`;
     }
     return this.http.get<Serie[]>(url);
   }

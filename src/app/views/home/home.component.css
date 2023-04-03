@@ -1,12 +1,12 @@
 .logo {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
 }
 
 .presentation {
   display: flex;
   flex-direction: row;
-  margin: 10% 30% 370px 10%;
+  margin: 13% 30% 240px 10%;
 }
 
 .presentation > h2 {

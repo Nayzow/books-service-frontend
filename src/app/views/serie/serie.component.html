@@ -1,15 +1,20 @@
-<h1>{{serie?.name}}</h1>
-<div class="data-container">
-
-  <div class="container">
-    <img src="{{serie?.image}}" width="280" height="280">
+<ng-container *ngIf="serie$ | async as serie; else notFound">
+  <div class="serie-details">
+    <div class="serie-image">
+      <img src="{{serie?.image}}" alt="{{serie?.name}}"/>
+    </div>
+    <div class="serie-info">
+      <h2>{{serie?.name}}</h2>
+      <p class="serie-editor">{{serie?.editor?.name}}</p>
+      <p class="serie-description">{{serie?.description}}</p>
+    </div>
   </div>
 
-  <div class="container">
-    <ul>
-      <h3><img src="{{serie?.editor?.image}}" height="30" width="30"/> Informations</h3>
-      <li>Éditeur : {{serie?.editor?.name || 'Non disponible'}}</li>
-      <li>Série : {{serie?.name || 'Non disponible'}}</li>
-    </ul>
-  </div>
-</div>
+  <h2>Comics de la série {{serie?.name}}</h2>
+
+  <app-scrollableBooksList [books]="serie?.books"></app-scrollableBooksList>
+</ng-container>
+
+<ng-template #notFound>
+  <p class="not-found-message">Série non trouvé :'(</p>
+</ng-template>

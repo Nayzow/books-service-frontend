@@ -21,7 +21,8 @@ import {animate, query, stagger, style, transition, trigger} from "@angular/anim
 export class BooksComponent implements OnInit {
   @Input() books: Book[] = [];
 
-  constructor(private booksService: BooksService) { }
+  constructor(private booksService: BooksService) {
+  }
 
   async submit(term: any) {
     await this.booksService.findByName(term).subscribe(books => this.books = books);

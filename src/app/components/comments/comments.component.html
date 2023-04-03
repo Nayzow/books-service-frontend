@@ -1,0 +1,25 @@
+<div class="comment-section">
+  <h3 class="section-title">Commentaires</h3>
+  <div class="comments" *ngFor="let comment of comments">
+    <!-- boucle sur les commentaires -->
+    <div class="comment">
+      <div class="user-avatar">
+        <img src="{{comment.user.image}}">
+      </div>
+      <div class="comment-content">
+        <h4 class="comment-author">{{comment.user.username}}</h4>
+        <p class="comment-text">{{comment.content}}</p>
+        <p class="comment-date">Posté le {{comment.date}}</p>
+      </div>
+    </div>
+    <!-- fin de la boucle -->
+  </div>
+  <form class="comment-form">
+    <h3 class="form-title">Ajouter un commentaire</h3>
+    <div class="form-group">
+      <label for="comment">Commentaire</label>
+      <textarea id="comment" name="comment" required></textarea>
+    </div>
+    <button type="submit" class="btn-submit">Envoyer</button>
+  </form>
+</div>

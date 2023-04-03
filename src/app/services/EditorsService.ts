@@ -36,9 +36,9 @@ export class EditorsService {
   }
 
   findByName(name: string | null = null): Observable<Editor[]> {
-    let url = environment.apiUrl + '/editors/';
+    let url = environment.apiUrl + '/editors';
     if (name) {
-      url += encodeURI(name);
+      url += `?name=${encodeURIComponent(name)}`;
     }
     return this.http.get<Serie[]>(url);
   }
