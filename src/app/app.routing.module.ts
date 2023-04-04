@@ -8,10 +8,13 @@ import {SeriesComponent} from "./views/series/series.component";
 import {SerieComponent} from "./views/serie/serie.component";
 import {EditorsComponent} from "./views/editors/editors.component";
 import {EditorComponent} from "./views/editor/editor.component";
-
+import {LoginComponent} from "./views/login/login.component";
+import {SignupComponent} from "./views/signup/signup.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
   { path: 'books', component: BooksComponent },
   { path: 'series', component: SeriesComponent },
   { path: 'editors', component: EditorsComponent },

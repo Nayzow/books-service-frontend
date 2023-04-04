@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
-import {RouterLink, RouterOutlet} from "@angular/router";
+import {RouterOutlet} from "@angular/router";
 import {AppRoutingModule} from "./app.routing.module";
 import {FormsModule} from "@angular/forms";
 import {NgOptimizedImage} from "@angular/common";
@@ -20,6 +20,9 @@ import {EditorsComponent} from "./views/editors/editors.component";
 import {EditorComponent} from "./views/editor/editor.component";
 import {ScrollableBooksListComponent} from "./components/scrollableBooksList/scrollableBooksList.component";
 import {CommentsComponent} from "./components/comments/comments.component";
+import {ScrollableSeriesListComponent} from "./components/scrollableSeriesList/scrollableSeriesList.component";
+import {LoginComponent} from "./views/login/login.component";
+import {SignupComponent} from "./views/signup/signup.component";
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import {CommentsComponent} from "./components/comments/comments.component";
     SearchbarComponent,
     FooterComponent,
     ScrollableBooksListComponent,
-    CommentsComponent,
+    ScrollableSeriesListComponent,
+    LoginComponent,
+    SignupComponent,
     HomeComponent,
     UserComponent,
     BooksComponent,
@@ -37,6 +42,7 @@ import {CommentsComponent} from "./components/comments/comments.component";
     SerieComponent,
     EditorsComponent,
     EditorComponent,
+    CommentsComponent,
   ],
   imports: [
     BrowserModule,

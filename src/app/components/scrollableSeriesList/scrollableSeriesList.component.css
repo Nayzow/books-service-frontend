@@ -1,0 +1,9 @@
+:host .list-item {
+  border-radius: 9999px;
+  width: 100px;
+  height: 100px;
+}
+
+.list-item img {
+  width: 70px;
+}

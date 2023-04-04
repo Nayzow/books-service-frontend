@@ -7,4 +7,11 @@
     <a [routerLink]="['/series']" class="nav-object">Séries</a>
     <a [routerLink]="['/editors']" class="nav-object">Éditeurs</a>
   </div>
+  <div class="nav-auth">
+    <button class="auth-button"><img src="assets/images/user.png"></button>
+    <div class="auth-menu">
+      <a [routerLink]="['/login']">Connexion</a>
+      <a [routerLink]="['/signup']">Inscription</a>
+    </div>
+  </div>
 </nav>

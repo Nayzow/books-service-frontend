@@ -10,6 +10,8 @@
   </div>
 
   <h2>Séries de comics de l'éditeur {{editor?.name}}</h2>
+
+  <app-scrollableSeriesList [series]="editor?.series" ></app-scrollableSeriesList>
 </ng-container>
 
 <ng-template #notFound>

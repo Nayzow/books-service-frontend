@@ -5,7 +5,7 @@
   <div class="list">
     <a *ngFor="let serie of series" [routerLink]="['/series/' +  serie.id] " class="list-item">
       <h3>{{ serie.name }}</h3>
-      <img src="{{serie.image}}" height="150" width="150">
+      <img src="{{serie.image}}">
     </a>
   </div>
 </div>

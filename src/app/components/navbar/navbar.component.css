@@ -31,3 +31,52 @@
   color: #FFC107;
   text-decoration: underline;
 }
+
+.nav-auth {
+  margin-left: auto;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.auth-button {
+  margin-left: 20px;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.auth-button img {
+  width: 40px;
+}
+
+.auth-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1;
+  display: none;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.auth-menu a {
+  color: #444;
+  display: flex;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 5px 0;
+}
+
+.auth-menu a:hover {
+  background-color: #eee;
+}
+
+.nav-auth:hover .auth-menu {
+  display: flex;
+  flex-direction: column;
+}

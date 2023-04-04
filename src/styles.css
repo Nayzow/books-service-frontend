@@ -13,6 +13,8 @@ h2 {
 h3 {
   display: flex;
   font-size: 1rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 h4 {
@@ -63,8 +65,8 @@ p {
   text-shadow: 3px 2px #000000;
   background-color: #444444;
   border-radius: 999px;
-  width: 160px;
-  height: 160px;
+  width: 138px;
+  height: 138px;
   box-shadow: 0 0 18px 0 #000000;
   transform: translateY(0.3em);
   transition: transform ease-in-out 200ms;
