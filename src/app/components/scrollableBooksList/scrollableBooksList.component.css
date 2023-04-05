@@ -5,9 +5,18 @@
 
 .list {
   display: flex;
-  overflow-x: hidden;
+  overflow-x: scroll;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch; /* Permet le défilement fluide sur les appareils iOS */
+}
+
+.list::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background-color: transparent;
 }
 
 :host .list-item {

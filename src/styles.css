@@ -86,6 +86,14 @@ p {
   padding: 0;
 }
 
+.others {
+  margin-left: 135px;
+}
+
+.others img {
+  width: 40px;
+}
+
 .not-found-message {
   font-size: 24px;
   color: red;

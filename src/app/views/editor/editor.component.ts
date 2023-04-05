@@ -3,6 +3,7 @@ import {EditorsService} from "../../services/EditorsService";
 import {EditorDetails} from "../../models/EditorDetails";
 import {map, Observable, switchMap} from "rxjs";
 import {ActivatedRoute} from "@angular/router";
+import {Serie} from "../../models/Serie";
 
 @Component({
   selector: 'app-editor',
@@ -11,6 +12,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class EditorComponent implements OnInit {
   editor$!: Observable<EditorDetails>;
+  series$!: Observable<Serie[]>;
 
   id: string | null = null;
   constructor(private editorsService: EditorsService, private activatedRoute: ActivatedRoute) {
@@ -22,5 +24,9 @@ export class EditorComponent implements OnInit {
         map((params) => params.get('id')),
         switchMap(id => this.editorsService.findById(id))
       )
+    this.series$ = this.editor$.pipe(
+      map((editor) => editor.id),
+      switchMap(id => this.editorsService.findAllSeriesByIdEditor(id))
+    )
   }
 }

@@ -8,18 +8,24 @@
       <p class="book-author">{{book?.author}}</p>
       <p class="book-illustrator">{{book?.illustrator}}</p>
       <p class="book-date">{{book?.date}}</p>
+      <p class="book-tome">{{book?.tome}}</p>
       <p class="book-description">{{book?.description}}</p>
       <p class="book-series">{{book?.serie?.name}}</p>
       <p class="book-editor">{{book?.serie?.editor?.name}}</p>
     </div>
   </div>
 
-  <h2>Autres comics de la série {{book?.serie?.name}}</h2>
+  <h2 class="others"><img src="{{book?.serie?.image}}"> Autres comics de la série {{book?.serie?.name}}</h2>
 
-  <app-scrollableBooksList [books]="book?.serie?.books"></app-scrollableBooksList>
+  <ng-container *ngIf="otherBooks$ | async as books;">
+    <app-scrollableBooksList [books]="books"></app-scrollableBooksList>
+  </ng-container>
 
-  <app-comments [comments]="book?.comments"></app-comments>
+  <ng-container *ngIf="comments$ | async as comments;">
+    <app-comments [comments]="comments"></app-comments>
+  </ng-container>
 </ng-container>
+
 <ng-template #notFound>
   <p class="not-found-message">Comic non trouvé :'(</p>
 </ng-template>

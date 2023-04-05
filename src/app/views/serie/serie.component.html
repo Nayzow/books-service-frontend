@@ -10,9 +10,11 @@
     </div>
   </div>
 
-  <h2>Comics de la série {{serie?.name}}</h2>
+  <h2 class="others">Comics de la série {{serie?.name}}</h2>
 
-  <app-scrollableBooksList [books]="serie?.books"></app-scrollableBooksList>
+  <ng-container *ngIf="books$ | async as books">
+      <app-scrollableBooksList [books]="books"></app-scrollableBooksList>
+  </ng-container>
 </ng-container>
 
 <ng-template #notFound>

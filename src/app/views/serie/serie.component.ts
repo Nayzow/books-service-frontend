@@ -3,6 +3,7 @@ import {SerieDetails} from "../../models/SerieDetails";
 import {SeriesService} from "../../services/SeriesService";
 import {map, Observable, switchMap} from "rxjs";
 import {ActivatedRoute} from "@angular/router";
+import {BookDetails} from "../../models/BookDetails";
 
 @Component({
   selector: 'app-serie',
@@ -11,6 +12,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class SerieComponent implements OnInit {
   serie$!: Observable<SerieDetails>;
+  books$!: Observable<BookDetails[]>
   path: string | null = null;
   id: string | null = null;
 
@@ -23,5 +25,9 @@ export class SerieComponent implements OnInit {
         map((params) => params.get('id')),
         switchMap(id => this.seriesService.findById(id))
       )
+    this.books$ = this.serie$.pipe(
+      map((serie) => serie.id),
+      switchMap(id => this.seriesService.findAllBooksByIdSerie(id))
+    )
   }
 }

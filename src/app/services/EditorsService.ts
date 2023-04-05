@@ -26,13 +26,13 @@ export class EditorsService {
     return this.http.get<EditorDetails>(url);
   }
 
-  findAllBooksByIdSerie(id: string | null = null): Observable<Editor> {
+  findAllSeriesByIdEditor(id: bigint | null = null): Observable<Serie[]> {
     let url = environment.apiUrl + '/editors/';
     if (id) {
-      url += encodeURI(id) + '/series';
+      url += encodeURI(String(id)) + '/series';
     }
 
-    return this.http.get<Editor>(url);
+    return this.http.get<Serie[]>(url);
   }
 
   findByName(name: string | null = null): Observable<Editor[]> {

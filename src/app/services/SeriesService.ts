@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
 import {Serie} from "../models/Serie";
 import {SerieDetails} from "../models/SerieDetails";
+import {BookDetails} from "../models/BookDetails";
 
 @Injectable({
   providedIn: 'root',
@@ -25,13 +26,12 @@ export class SeriesService {
     return this.http.get<SerieDetails>(url);
   }
 
-  findAllBooksByIdSerie(id: string | null = null): Observable<Serie> {
+  findAllBooksByIdSerie(id: bigint | null = null): Observable<BookDetails[]> {
     let url = environment.apiUrl + '/series/';
     if (id) {
-      url += encodeURI(id) + '/books';
+      url += encodeURI(String(id)) + '/books';
     }
-
-    return this.http.get<Serie>(url);
+    return this.http.get<BookDetails[]>(url);
   }
 
   findByName(name: string | null = null): Observable<Serie[]> {

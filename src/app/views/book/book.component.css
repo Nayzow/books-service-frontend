@@ -47,6 +47,11 @@
   font-weight: bold;
 }
 
+.book-info .book-tome::before {
+  content: "Tome : ";
+  font-weight: bold;
+}
+
 .book-info .book-description::before {
   content: "Description : ";
   font-weight: bold;
@@ -72,6 +77,13 @@ a:hover {
 }
 
 h2,
-.book-series {
+.book-series, .book-editor {
   color: #ffbe0b;
+}
+
+@media (max-width: 800px) {
+  .others {
+    margin: 0;
+    text-align: center;
+  }
 }

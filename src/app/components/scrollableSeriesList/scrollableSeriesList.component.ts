@@ -7,7 +7,7 @@ import {Serie} from "../../models/Serie";
   styleUrls: ['../scrollableBooksList/scrollableBooksList.component.css', './scrollableSeriesList.component.css']
 })
 export class ScrollableSeriesListComponent implements OnInit {
-  @Input() series: Serie[] | undefined;
+  @Input() series!: Serie[];
   @ViewChild('list') list!: ElementRef;
   itemWidth: number = 150; // Largeur d'un élément de la liste
   visibleItems: number = 4; // Nombre d'éléments visibles à la fois dans la liste

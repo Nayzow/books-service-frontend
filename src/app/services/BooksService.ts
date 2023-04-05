@@ -4,6 +4,7 @@ import {Book} from "../models/Book";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
+import {Comment} from "../models/Comment";
 
 @Injectable({
   providedIn: 'root',
@@ -31,5 +32,13 @@ export class BooksService {
       url += `?title=${encodeURIComponent(name)}`;
     }
     return this.http.get<Book[]>(url);
+  }
+
+  findCommentsByBookId(id: string | null = null): Observable<Comment[]> {
+    let url = environment.apiUrl + '/books/';
+    if (id) {
+      url += encodeURI(id) + '/comments';
+    }
+    return this.http.get<Comment[]>(url);
   }
 }
