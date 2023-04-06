@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'books/:id', component: BookComponent },
   { path: 'series/:id', component: SerieComponent },
   { path: 'editors/:id', component: EditorComponent },
-  { path: 'user/:user', component: UserComponent },
+  { path: 'users/:id', component: UserComponent },
   { path: '**', component: HomeComponent },
 ];
 

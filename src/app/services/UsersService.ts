@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
 import {User} from "../models/User";
 import {UserDetails} from "../models/UserDetails";
+import {SignupData} from "../models/SignupData";
 
 @Injectable({
   providedIn: 'root',
@@ -23,5 +24,10 @@ export class UsersService {
       url += encodeURI(id);
     }
     return this.http.get<UserDetails>(url);
+  }
+
+  createUser(signupData: SignupData): Observable<SignupData> {
+    let url = environment.apiUrl + '/users/';
+    return this.http.post<SignupData>(url, signupData);
   }
 }

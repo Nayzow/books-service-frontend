@@ -33,12 +33,12 @@
 }
 
 .book-info .book-author::before {
-  content: "Author : ";
+  content: "Auteur : ";
   font-weight: bold;
 }
 
 .book-info .book-illustrator::before {
-  content: "Illustrator : ";
+  content: "Illustrateur : ";
   font-weight: bold;
 }
 
@@ -63,7 +63,7 @@
 }
 
 .book-info .book-editor::before {
-  content: "Editor : ";
+  content: "Editeur : ";
   font-weight: bold;
 }
 

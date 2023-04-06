@@ -1,13 +1,13 @@
 import {Component, ElementRef, Input, OnInit, ViewChild} from "@angular/core";
-import {Book} from "../../models/Book";
+import {BookStatement} from "../../models/BookStatement";
 
 @Component({
-  selector: 'app-scrollableBooksList',
-  templateUrl: './scrollableBooksList.component.html',
-  styleUrls: ['./scrollableBooksList.component.css']
+  selector: 'app-scrollableBooksStatementList',
+  templateUrl: './scrollableBooksStatementList.component.html',
+  styleUrls: ['./scrollableBooksStatementList.component.css']
 })
-export class ScrollableBooksListComponent implements OnInit {
-  @Input() books!: Book[];
+export class ScrollableBooksStatementListComponent implements OnInit {
+  @Input() booksStatement!: BookStatement[];
   @ViewChild('list') list!: ElementRef;
   itemWidth: number = 150; // Largeur d'un élément de la liste
   visibleItems: number = 4; // Nombre d'éléments visibles à la fois dans la liste

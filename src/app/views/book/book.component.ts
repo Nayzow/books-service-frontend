@@ -5,6 +5,8 @@ import {ActivatedRoute} from "@angular/router";
 import {map, Observable, switchMap, tap} from "rxjs";
 import {Comment} from "../../models/Comment";
 import {SeriesService} from "../../services/SeriesService";
+import {Book} from "../../models/Book";
+import {BookStatement} from "../../models/BookStatement";
 
 @Component({
   selector: 'app-book',
@@ -14,7 +16,8 @@ import {SeriesService} from "../../services/SeriesService";
 export class BookComponent implements OnInit {
   book$!: Observable<BookDetails>;
   comments$!: Observable<Comment[]>;
-  otherBooks$!: Observable<BookDetails[]>;
+  booksStatement$!: Observable<BookStatement[]>;
+  otherBooks$!: Observable<Book[]>;
 
   constructor(private booksService: BooksService, private seriesService: SeriesService, private activatedRoute: ActivatedRoute) { }
 
@@ -27,10 +30,18 @@ export class BookComponent implements OnInit {
           window.scrollTo({top: 0, behavior: 'smooth'});
         })
       )
+
     this.comments$ = this.activatedRoute.paramMap
       .pipe(
         map((params) => params.get('id')),
-        switchMap(id => this.booksService.findCommentsByBookId(id)))
+        switchMap(id => this.booksService.findAllCommentsByBookId(id)))
+
+    this.booksStatement$ = this.activatedRoute.paramMap
+      .pipe(
+        map((params) => params.get('id')),
+        switchMap(id => this.booksService.findAllBookStatementsByBookId(id))
+      )
+
     this.otherBooks$ = this.book$.pipe(
       map((bookDetails) => bookDetails.serie.id),
       switchMap(id => this.seriesService.findAllBooksByIdSerie(id))

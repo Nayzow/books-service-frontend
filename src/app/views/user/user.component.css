@@ -1,0 +1,64 @@
+.user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.user-image {
+  margin-top: 30px;
+  margin-left: 80px;
+}
+
+.user-image img {
+  width: 250px;
+  max-width: 100%;
+  border-radius: 5px;
+  margin-top: 40px;
+}
+
+.user-info {
+  margin-top: 30px;
+  width: 65%;
+}
+
+.user-info h2 {
+  font-size: 36px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.user-info p {
+  font-size: 18px;
+}
+
+.user-info .user-mail::before {
+  content: "E-mail : ";
+  font-weight: bold;
+}
+
+.user-info .user-username::before {
+  content: "Nom d'utilisateur : ";
+  font-weight: bold;
+}
+
+.user-info .user-role::before {
+  content: "Rôle : ";
+  font-weight: bold;
+}
+
+.user-info .user-password::before {
+  content: "Mot de passe : ";
+  font-weight: bold;
+}
+
+.user-library {
+  margin-left: 50px;
+}
+
+@media (max-width: 800px) {
+  .user-library {
+    margin: 0;
+    text-align: center;
+  }
+}

@@ -3,7 +3,7 @@ import {SerieDetails} from "../../models/SerieDetails";
 import {SeriesService} from "../../services/SeriesService";
 import {map, Observable, switchMap} from "rxjs";
 import {ActivatedRoute} from "@angular/router";
-import {BookDetails} from "../../models/BookDetails";
+import {Book} from "../../models/Book";
 
 @Component({
   selector: 'app-serie',
@@ -12,7 +12,7 @@ import {BookDetails} from "../../models/BookDetails";
 })
 export class SerieComponent implements OnInit {
   serie$!: Observable<SerieDetails>;
-  books$!: Observable<BookDetails[]>
+  books$!: Observable<Book[]>
   path: string | null = null;
   id: string | null = null;
 

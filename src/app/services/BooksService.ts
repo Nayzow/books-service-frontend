@@ -5,6 +5,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
 import {Comment} from "../models/Comment";
+import {BookStatement} from "../models/BookStatement";
 
 @Injectable({
   providedIn: 'root',
@@ -34,11 +35,19 @@ export class BooksService {
     return this.http.get<Book[]>(url);
   }
 
-  findCommentsByBookId(id: string | null = null): Observable<Comment[]> {
+  findAllCommentsByBookId(id: string | null = null): Observable<Comment[]> {
     let url = environment.apiUrl + '/books/';
     if (id) {
       url += encodeURI(id) + '/comments';
     }
     return this.http.get<Comment[]>(url);
+  }
+
+  findAllBookStatementsByBookId(id: string | null = null): Observable<BookStatement[]> {
+    let url = environment.apiUrl + '/books/';
+    if (id) {
+      url += encodeURI(id) + '/statements';
+    }
+    return this.http.get<BookStatement[]>(url);
   }
 }

@@ -1,0 +1,16 @@
+<div class="list-container">
+  <button class="scroll-button" (click)="scrollLeft()">
+    <img src="../../../assets/images/arrow-left.png">
+  </button>
+  <div class="list" #list>
+    <a *ngFor="let borrowing of borrowings" [routerLink]="['/books/' + borrowing.bookStatement.book.id]" class="list-item">
+      <h3 class="book-title">{{ borrowing.bookStatement.book.title }}</h3>
+      <h3 class="book-statement">{{borrowing.bookStatement.statement}}</h3>
+      <img src="{{borrowing.bookStatement.book.image}}">
+      <h3 class="book-duration">{{borrowing.duration}}</h3>
+    </a>
+  </div>
+  <button class="scroll-button" (click)="scrollRight()">
+    <img src="../../../assets/images/arrow-right.png">
+  </button>
+</div>

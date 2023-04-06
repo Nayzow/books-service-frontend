@@ -1,5 +1,4 @@
 import {Editor} from "./Editor";
-import {Book} from "./Book";
 
 export interface SerieDetails {
   id: bigint;
@@ -7,5 +6,4 @@ export interface SerieDetails {
   description: string;
   image: string;
   editor: Editor;
-  books: Book[];
 }

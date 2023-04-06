@@ -1,0 +1,16 @@
+<div class="list-container">
+  <button class="scroll-button" (click)="scrollLeft()">
+    <img src="../../../assets/images/arrow-left.png">
+  </button>
+  <div class="list" #list>
+    <a *ngFor="let bookStatement of booksStatement" class="list-item">
+      <h3 class="book-title">{{ bookStatement.book.title }}</h3>
+      <img src="{{bookStatement.book.image}}">
+      <button class="shop-button">Louer</button>
+      <h3 class="book-statement">{{bookStatement.statement}}</h3>
+    </a>
+  </div>
+  <button class="scroll-button" (click)="scrollRight()">
+    <img src="../../../assets/images/arrow-right.png">
+  </button>
+</div>

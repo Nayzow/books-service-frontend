@@ -23,6 +23,12 @@ import {CommentsComponent} from "./components/comments/comments.component";
 import {ScrollableSeriesListComponent} from "./components/scrollableSeriesList/scrollableSeriesList.component";
 import {LoginComponent} from "./views/login/login.component";
 import {SignupComponent} from "./views/signup/signup.component";
+import {
+  ScrollableBorrowingsListComponent
+} from "./components/scrollableBorrowingsList/scrollableBorrowingsList.component";
+import {
+  ScrollableBooksStatementListComponent
+} from "./components/scrollableBooksStatementList/scrollableBooksStatementList.component";
 
 @NgModule({
   declarations: [
@@ -32,6 +38,8 @@ import {SignupComponent} from "./views/signup/signup.component";
     FooterComponent,
     ScrollableBooksListComponent,
     ScrollableSeriesListComponent,
+    ScrollableBooksStatementListComponent,
+    ScrollableBorrowingsListComponent,
     LoginComponent,
     SignupComponent,
     HomeComponent,
