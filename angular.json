@@ -58,7 +58,7 @@
         },
         "serve": {
           "options": {
-            "browserTarget": "your-application-name:build",
+            "browserTarget": "books-services-frontend:build",
             "proxyConfig": "src/proxy.conf.json"
           },
           "builder": "@angular-devkit/build-angular:dev-server",

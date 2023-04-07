@@ -1,8 +1,8 @@
 .list-item img {
-  width: 100px;
+  width: 103px;
   margin-bottom: 30px;
 }
 
-h3 {
-
+.list-item h3 {
+  font-size: 0.8rem;
 }

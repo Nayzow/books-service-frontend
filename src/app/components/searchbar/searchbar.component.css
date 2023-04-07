@@ -13,7 +13,7 @@ button {
   font-size: 1em;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
   button {
     margin-left: 60px;
     margin-bottom: 30px;

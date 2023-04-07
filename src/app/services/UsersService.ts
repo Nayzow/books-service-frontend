@@ -27,7 +27,7 @@ export class UsersService {
   }
 
   createUser(signupData: SignupData): Observable<SignupData> {
-    let url = environment.apiUrl + '/users/';
+    let url = environment.apiUrl + '/users';
     return this.http.post<SignupData>(url, signupData);
   }
 }
