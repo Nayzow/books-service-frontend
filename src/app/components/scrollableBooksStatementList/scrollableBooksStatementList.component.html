@@ -6,7 +6,7 @@
     <a *ngFor="let bookStatement of booksStatement" class="list-item">
       <h3 class="book-title">{{ bookStatement.book.title }}</h3>
       <img src="{{bookStatement.book.image}}">
-      <button class="shop-button">Louer</button>
+      <button class="shop-button" type="submit" (click)="onClick()">Louer</button>
       <h3 class="book-statement">{{bookStatement.statement}}</h3>
     </a>
   </div>
@@ -14,3 +14,5 @@
     <img src="../../../assets/images/arrow-right.png">
   </button>
 </div>
+
+<app-popup #popup [popupTitle]="title" [popupMessage]="message"></app-popup>

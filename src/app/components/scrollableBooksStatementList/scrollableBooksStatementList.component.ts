@@ -1,5 +1,6 @@
 import {Component, ElementRef, Input, OnInit, ViewChild} from "@angular/core";
 import {BookStatement} from "../../models/BookStatement";
+import {PopupComponent} from "../popup/popup.component";
 
 @Component({
   selector: 'app-scrollableBooksStatementList',
@@ -9,8 +10,11 @@ import {BookStatement} from "../../models/BookStatement";
 export class ScrollableBooksStatementListComponent implements OnInit {
   @Input() booksStatement!: BookStatement[];
   @ViewChild('list') list!: ElementRef;
+  @ViewChild('popup') popupComponent!: PopupComponent;
   itemWidth: number = 150; // Largeur d'un élément de la liste
   visibleItems: number = 4; // Nombre d'éléments visibles à la fois dans la liste
+  title: string = '';
+  message: string = '';
 
   constructor() { }
 
@@ -33,6 +37,12 @@ export class ScrollableBooksStatementListComponent implements OnInit {
       left: this.itemWidth * this.visibleItems,
       behavior: 'smooth'
     });
+  }
+
+  onClick() {
+    this.title = "Bravo !";
+    this.message = "Le comic a bien été loué, bonne lecture !";
+    this.popupComponent.displayPopup();
   }
 
   ngOnInit(): void {

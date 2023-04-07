@@ -1,0 +1,11 @@
+<div class="popup-container" [ngClass]="{'show-popup': showPopup}">
+  <div class="popup">
+    <div class="popup-header">
+      <h3>{{ popupTitle }}</h3>
+      <button class="close-btn" (click)="hidePopup()">X</button>
+    </div>
+    <div class="popup-body">
+      <p>{{ popupMessage }}</p>
+    </div>
+  </div>
+</div>

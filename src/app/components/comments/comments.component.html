@@ -14,12 +14,14 @@
     </div>
     <!-- fin de la boucle -->
   </div>
-  <form class="comment-form">
+  <form class="comment-form" (ngSubmit)="onSubmit()">
     <h3 class="form-title">Ajouter un commentaire</h3>
     <div class="form-group">
       <label for="comment">Commentaire</label>
-      <textarea id="comment" name="comment" required></textarea>
+      <textarea id="comment" name="comment" required [(ngModel)]="commentData.content"></textarea>
     </div>
     <button type="submit" class="btn-submit">Envoyer</button>
   </form>
 </div>
+
+<app-popup #popup [popupTitle]="title" [popupMessage]="message"></app-popup>

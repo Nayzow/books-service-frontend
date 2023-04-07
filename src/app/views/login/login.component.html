@@ -1,6 +1,6 @@
 <div class="login-form-container">
   <h2>Connexion</h2>
-  <form class="login-form">
+  <form class="login-form" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="username">Nom d'utilisateur</label>
       <input type="text" id="username" name="username" required>
@@ -15,3 +15,5 @@
     <a [routerLink]="['/signup']">Pas encore inscrit ? Créer un compte</a>
   </div>
 </div>
+
+<app-popup #popup [popupTitle]="title" [popupMessage]="message"></app-popup>

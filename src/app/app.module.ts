@@ -29,6 +29,7 @@ import {
 import {
   ScrollableBooksStatementListComponent
 } from "./components/scrollableBooksStatementList/scrollableBooksStatementList.component";
+import {PopupComponent} from "./components/popup/popup.component";
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import {
     ScrollableSeriesListComponent,
     ScrollableBooksStatementListComponent,
     ScrollableBorrowingsListComponent,
+    PopupComponent,
     LoginComponent,
     SignupComponent,
     HomeComponent,

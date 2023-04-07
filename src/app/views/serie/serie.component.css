@@ -7,7 +7,8 @@
 
 .serie-image {
   margin-top: 30px;
-  margin-left: 30px;
+  margin-left: 120px;
+  margin-right: 30px;
 }
 
 .serie-image img {
@@ -19,7 +20,7 @@
 
 .serie-info {
   margin-top: 30px;
-  width: 65%;
+  width: 60%;
 }
 
 .serie-info h2 {
@@ -30,6 +31,7 @@
 
 .serie-info p {
   font-size: 18px;
+  margin-right: 60px;
 }
 
 .serie-info .serie-editor::before {

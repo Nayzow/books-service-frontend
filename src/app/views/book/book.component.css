@@ -7,7 +7,7 @@
 
 .book-image {
   margin-top: 30px;
-  margin-left: 80px;
+  margin-left: 150px;
 }
 
 .book-image img {
@@ -30,6 +30,7 @@
 
 .book-info p {
   font-size: 18px;
+  margin-right: 60px;
 }
 
 .book-info .book-author::before {

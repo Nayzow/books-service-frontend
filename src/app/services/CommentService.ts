@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
 import {User} from "../models/User";
 import {Comment} from "../models/Comment";
+import {CommentData} from "../models/CommentData";
 
 @Injectable({
   providedIn: 'root',
@@ -24,9 +25,8 @@ export class CommentService {
     }
     return this.http.get<Comment>(url);
   }
-  postComment(id_book: bigint, content: string, date: string, user: User): Observable<Comment> {
+  postComment(commentData: CommentData): Observable<CommentData> {
     const url = environment.apiUrl + '/comments';
-    const comment = { id_book, content, date, user };
-    return this.http.post<Comment>(url, comment);
+    return this.http.post<CommentData>(url, commentData);
   }
 }
