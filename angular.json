@@ -67,7 +67,8 @@
               "browserTarget": "books-services-frontend:build:production"
             },
             "development": {
-              "browserTarget": "books-services-frontend:build:development"
+              "browserTarget": "books-services-frontend:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
