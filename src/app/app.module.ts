@@ -30,12 +30,14 @@ import {
   ScrollableBooksStatementListComponent
 } from "./components/scrollableBooksStatementList/scrollableBooksStatementList.component";
 import {PopupComponent} from "./components/popup/popup.component";
+import {LoadingComponent} from "./components/loading/loading.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     SearchbarComponent,
+    LoadingComponent,
     FooterComponent,
     ScrollableBooksListComponent,
     ScrollableSeriesListComponent,

@@ -7,14 +7,15 @@
 }
 
 .navbar .logo {
-  margin-left: 10px;
+  margin-left: 15px;
 }
+
 
 .nav-title {
   margin-left: 10px;
-  font-size: 30px;
+  font-size: 23px;
+  color: #F6CB05;
 }
-
 .navbar .nav-links {
   display: flex;
   font-size: 16px;
@@ -22,7 +23,7 @@
 
 .navbar .nav-links a {
   margin-left: 20px;
-  color: #fff;
+  color: #d5d5d5;
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }

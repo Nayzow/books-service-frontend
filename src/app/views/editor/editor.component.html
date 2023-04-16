@@ -1,4 +1,4 @@
-<ng-container *ngIf="editor$ | async as editor; else notFound">
+<ng-container *ngIf="editor$ | async as editor; else loading">
   <div class="editor-details">
     <div class="editor-image">
       <img src="{{editor?.image}}" alt="{{editor?.name}}"/>
@@ -16,6 +16,6 @@
   </ng-container>
 </ng-container>
 
-<ng-template #notFound>
-  <p class="not-found-message">Editeur non trouvé :'(</p>
+<ng-template #loading>
+  <app-loading></app-loading>
 </ng-template>

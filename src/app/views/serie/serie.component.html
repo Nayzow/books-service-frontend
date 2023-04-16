@@ -1,4 +1,4 @@
-<ng-container *ngIf="serie$ | async as serie; else notFound">
+<ng-container *ngIf="serie$ | async as serie; else loading">
   <div class="serie-details">
     <div class="serie-image">
       <img src="{{serie?.image}}" alt="{{serie?.name}}"/>
@@ -17,6 +17,6 @@
   </ng-container>
 </ng-container>
 
-<ng-template #notFound>
-  <p class="not-found-message">Série non trouvé :'(</p>
+<ng-template #loading>
+  <app-loading></app-loading>
 </ng-template>

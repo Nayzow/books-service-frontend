@@ -12,7 +12,7 @@ import {Book} from "../../models/Book";
 })
 export class SerieComponent implements OnInit {
   serie$!: Observable<SerieDetails>;
-  books$!: Observable<Book[]>
+  books$!: Observable<Book[]>;
   path: string | null = null;
   id: string | null = null;
 

@@ -1,4 +1,4 @@
-<ng-container *ngIf="book$ | async as book; else notFound">
+<ng-container *ngIf="book$ | async as book; else loading">
   <div class="book-details">
     <div class="book-image">
       <img src="{{book?.image}}" alt="{{book?.title}}"/>
@@ -32,6 +32,6 @@
   </ng-container>
 </ng-container>
 
-<ng-template #notFound>
-  <p class="not-found-message">Comic non trouvé :'(</p>
+<ng-template #loading>
+  <app-loading></app-loading>
 </ng-template>
