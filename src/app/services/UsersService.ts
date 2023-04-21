@@ -40,11 +40,11 @@ export class UsersService {
     return this.http.get<Borrowing[]>(url);
   }
 
-  findUserByUsernameAndPassword(username: string, password: string): Observable<User> {
-    let url = environment.apiUrl + '/users/login';
+  findUserByUsernameAndPassword(username: string, password: string): Observable<UserDetails> {
+    let url = environment.apiUrl + '/auth/login';
     if (username && password) {
-      url += `?username=${encodeURIComponent(username)}&?password=${encodeURIComponent(password)}`;
+      url += `?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`;
     }
-    return this.http.get<User>(url);
+    return this.http.get<UserDetails>(url);
   }
 }

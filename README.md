@@ -30,6 +30,10 @@ Les routes de l’application sont définies dans le fichier app-routing.module.
 /books/{id} : voir les détails d'un éditeur de comic.
 ```
 
+```
+/users/{id} : voir les détails d'un utilisateur.
+```
+
 ## Installation classique
 
 Assurez-vous d’avoir Node.js et npm installés sur votre ordinateur. Vous pouvez vérifier leur installation en ouvrant une invite de commande et en tapant node -v et npm -v.
@@ -52,7 +56,7 @@ npm install
 npm start
 ```
 
-L'application devrait maintenant être accessible à l'adresse http://localhost:4200 à l'aide d'un serveur node.
+L'application devrait maintenant être accessible à l'adresse http://localhost:4200 à l'aide d'un serveur Node.
 
 ## Installation avec Docker
 
@@ -76,4 +80,4 @@ docker build -t books-service-frontend .
 docker run --name books-service-frontend -p 80:80 -d books-service-frontend
 ```
 
-L’application devrait maintenant être accessible à l’adresse http://localhost:80 à l’aide d’un serveur nginx.
+L’application devrait maintenant être accessible à l’adresse http://localhost:80 à l’aide d’un serveur Nginx.

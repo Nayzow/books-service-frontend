@@ -20,14 +20,23 @@ import {EditorsService} from "../../services/EditorsService";
 })
 export class EditorsComponent implements OnInit {
   @Input() editors: Editor[] = [];
+  loading: boolean = true;
 
   constructor(private editorService: EditorsService) { }
 
   async submit(term: any) {
-    await this.editorService.findByName(term).subscribe(editors => this.editors = editors);
+    this.loading = true;
+    await this.editorService.findByName(term).subscribe(editors => {
+      this.editors = editors;
+      this.loading = false;
+    });
   }
 
   ngOnInit() {
-    this.editorService.findAll().subscribe(editors => this.editors = editors)
+    this.loading = true;
+    this.editorService.findAll().subscribe(editors => {
+      this.editors = editors;
+      this.loading = false;
+    });
   }
 }

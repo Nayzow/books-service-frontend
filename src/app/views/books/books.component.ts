@@ -20,15 +20,24 @@ import {animate, query, stagger, style, transition, trigger} from "@angular/anim
 })
 export class BooksComponent implements OnInit {
   @Input() books: Book[] = [];
+  loading = false;
 
   constructor(private booksService: BooksService) {
   }
 
   async submit(term: any) {
-    await this.booksService.findByName(term).subscribe(books => this.books = books);
+    this.loading = true;
+    await this.booksService.findByName(term).subscribe(books => {
+      this.books = books;
+      this.loading = false;
+    });
   }
 
   ngOnInit() {
-    this.booksService.findAll().subscribe(books => this.books = books)
+    this.loading = true;
+    this.booksService.findAll().subscribe(books => {
+      this.books = books;
+      this.loading = false;
+    })
   }
 }

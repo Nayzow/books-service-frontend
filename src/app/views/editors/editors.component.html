@@ -1,11 +1,17 @@
 <h2>Entrez le nom de l'éditeur que vous recherchez ...</h2>
 <app-searchbar (submit)="submit($event)"></app-searchbar>
 
-<div [@editorsAnimation]="editors.length">
-  <div class="list">
-    <a *ngFor="let editor of editors" [routerLink]="['/editors/' +  editor.id] " class="list-item">
-      <h3>{{editor.name}}</h3>
-      <img src="{{editor.image}}">
-    </a>
-  </div>
+<div *ngIf="loading; else editorsList">
+  <app-loading></app-loading>
 </div>
+
+<ng-template #editorsList>
+  <div [@editorsAnimation]="editors.length">
+    <div class="list">
+      <a *ngFor="let editor of editors" [routerLink]="['/editors/' + editor.id]" class="list-item">
+        <h3>{{editor.name}}</h3>
+        <img src="{{editor.image}}">
+      </a>
+    </div>
+  </div>
+</ng-template>

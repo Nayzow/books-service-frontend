@@ -1,11 +1,17 @@
 <h2>Entrez le nom du comic que vous recherchez ...</h2>
 <app-searchbar (submit)="submit($event)"></app-searchbar>
 
-<div [@booksAnimation]="books.length">
-  <div class="list">
-    <a *ngFor="let book of books" [routerLink]="['/books/' +  book.id]" class="list-item">
-      <h3 class="book-title">{{ book.title }}</h3>
-      <img src="{{book.image}}">
-    </a>
-  </div>
+<div *ngIf="loading; else booksList">
+  <app-loading></app-loading>
 </div>
+
+<ng-template #booksList>
+  <div [@booksAnimation]="books.length">
+    <div class="list">
+      <a *ngFor="let book of books" [routerLink]="['/books/' +  book.id]" class="list-item">
+        <h3 class="book-title">{{ book.title }}</h3>
+        <img src="{{book.image}}">
+      </a>
+    </div>
+  </div>
+</ng-template>

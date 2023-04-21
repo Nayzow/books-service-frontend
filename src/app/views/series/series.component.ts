@@ -20,12 +20,22 @@ import {animate, query, stagger, style, transition, trigger} from "@angular/anim
 })
 export class SeriesComponent implements OnInit {
   @Input() series: Serie[] = [];
+  loading: boolean = true;
+
   constructor(private serieService: SeriesService) { }
   async submit(term: any) {
-    await this.serieService.findByName(term).subscribe(series => this.series = series);
+    this.loading = true;
+    await this.serieService.findByName(term).subscribe(series => {
+      this.series = series;
+      this.loading = false;
+    });
   }
 
   ngOnInit() {
-    this.serieService.findAll().subscribe(series => this.series = series)
+    this.loading = true;
+    this.serieService.findAll().subscribe(series => {
+      this.series = series;
+      this.loading = false;
+    });
   }
 }
